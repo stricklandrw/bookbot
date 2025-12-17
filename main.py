@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 
+import sys
 from stats import how_many_words, character_count, pretty_report
 
-book_loc = "books/frankenstein.txt"
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+book_loc = sys.argv[1]
 
 def get_book_text(path_to_file):
     with open(path_to_file) as f:
